@@ -3,7 +3,8 @@ import './App.css';
 
 const App = () => {
     const [titleFontSize, setTitleFontSize] = useState('7rem');
-    const titleText = import.meta.env.VITE_WEBSITE_TITLE || 'TITLE';
+    const titleText = import.meta.env.VITE_WEBSITE_TITLE || 'Domain Land';
+    const logoUrl = import.meta.env.VITE_WEBSITE_LOGO_URL || './logo.svg';
 
     useEffect(() => {
         // Dynamically adjust font size based on title length
@@ -23,7 +24,7 @@ const App = () => {
     return (
         <>
             <div className='logo'>
-                <img src='./logo.svg' alt="logo" />
+                <img src={logoUrl} alt="logo" />
             </div>
             {import.meta.env.VITE_WEBSITE_EMAIL &&
                 <div className="email-container">
